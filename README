@@ -1,0 +1,6 @@
+CyanogenMod device configuration for the Acer Liquid Mini E310
+Originally designed by Vasencheg
+
+Pre-Setup
+=========
+Execute "extract-files.sh" to extract prebuilt libraries (from a working device)
