@@ -16,9 +16,8 @@ TARGET_CPU_ABI := armeabi
 TARGET_BOOTLOADER_BOARD_NAME := liquid_mini
 
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-
-BOARD_KERNEL_CMDLINE := mem=471M console=ttyMSM2,115200n8 androidboot.hardware=thunderg no_console_suspend
-BOARD_KERNEL_BASE := 0x12800000
+BOARD_KERNEL_CMDLINE := console=ttyMSM2,115200n8 androidboot.hardware=qcom
+BOARD_KERNEL_BASE := 0x2e00000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # fix this up by examining /proc/mtd on a running device
