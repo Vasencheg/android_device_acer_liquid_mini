@@ -41,28 +41,31 @@ adb pull /system/lib/libdiag.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 adb pull /system/lib/liboem_rapi.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liboem_rapi.so
 adb pull /system/lib/libgsdi_exp.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libgsdi_exp.so
 adb pull /system/lib/libril-qc-1.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libril-qc-1.so
-adb pull /system/lib/liblgeat.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liblgeat.so
+#adb pull /system/lib/liblgeat.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liblgeat.so
 adb pull /system/lib/libcm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libcm.so
 adb pull /system/lib/libqueue.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libqueue.so
-adb pull /system/lib/liblgerft.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liblgerft.so
+#adb pull /system/lib/liblgerft.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liblgerft.so
 adb pull /system/lib/libdss.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libdss.so
-adb pull /system/lib/libbcmwl.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libbcmwl.so
+#adb pull /system/lib/libbcmwl.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libbcmwl.so
 adb pull /system/lib/libwmsts.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libwmsts.so
 adb pull /system/lib/libdsutils.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libdsutils.so
 adb pull /system/lib/libidl.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libidl.so
-adb pull /system/lib/liblgdrm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liblgdrm.so
+#adb pull /system/lib/liblgdrm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liblgdrm.so
 adb pull /system/lib/libsnd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libsnd.so
 adb pull /system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libril.so
 adb pull /system/bin/qmuxd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/qmuxd
-adb pull /system/etc/flex/flex.xml ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex/flex.xml
+#adb pull /system/etc/flex/flex.xml ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex/flex.xml
 
 ## Audio
 
 adb pull /system/lib/libaudioeq.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libaudioeq.so
 
 ## HAL
-adb pull /system/lib/hw/sensors.thunderg.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/sensors.thunderg.so
-adb pull /system/lib/hw/gralloc.thunderg.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/
+adb pull /system/lib/hw/sensors.msm7k.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/sensors.msm7k.so
+adb pull /system/lib/hw/gralloc.msm7k.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/gralloc.msm7k.so
+adb pull /system/lib/hw/lights.msm7k.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/lights.msm7k.so
+adb pull /system/lib/hw/copybit.msm7k.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/copybit.msm7k.so
+adb pull /system/lib/hw/gps.default.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/gps.default.so
 
 ## EGL
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl/libGLESv2_adreno200.so
@@ -71,7 +74,7 @@ adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/$VENDOR/$DEVIC
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl/libEGL_adreno200.so
 adb pull /system/etc/firmware/yamato_pfp.fw ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware/yamato_pfp.fw
 adb pull /system/etc/firmware/yamato_pm4.fw ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware/yamato_pm4.fw
-adb pull /system/bin/ami304d ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/ami304d
+#adb pull /system/bin/ami304d ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/ami304d
 
 ## Camera
 adb pull /system/lib/libcamera.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
@@ -102,8 +105,8 @@ adb pull /system/lib/libmm-adspsvc.so ../../../vendor/$VENDOR/$DEVICE/proprietar
 adb pull /system/lib/libdivxdrmdecrypt.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 
 ## BT
-adb pull /system/etc/firmware/BCM4325D1_004.002.004.0218.0248.hcd ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware/
+#adb pull /system/etc/firmware/BCM4325D1_004.002.004.0218.0248.hcd ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware/
 
 ## Wifi
-adb pull /system/etc/wl/rtecdc-apsta.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl/
-adb pull /system/etc/wl/rtecdc.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl/
+#adb pull /system/etc/wl/rtecdc-apsta.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl/
+#adb pull /system/etc/wl/rtecdc.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl/
