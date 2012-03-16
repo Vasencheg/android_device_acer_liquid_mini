@@ -20,10 +20,14 @@ $(call inherit-product-if-exists, vendor/acer/liquid_mini/liquid_mini-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
+    libcamera \
     gps.liquid_mini \
     copybit.msm7k \
     gralloc.liquid_mini \
-    libOmxCore
+    libmm-omxcore \
+    libOmxVidEnc \
+    libOmxCore \
+    bash
 
 # Packages
 PRODUCT_PACKAGES += \
@@ -31,6 +35,7 @@ PRODUCT_PACKAGES += \
     SpareParts \
     Development \
     Term \
+    FM \
     VoiceDialer \
     CMWallpapers
 
@@ -176,10 +181,6 @@ $(call inherit-product, vendor/cyanogen/products/gsm.mk)
 # Include FM-Radio stuff
 $(call inherit-product, vendor/cyanogen/products/bcm_fm_radio.mk)
 
-
-PRODUCT_LOCALES += \
-    ru_RU
-
 # Screen density
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160
@@ -191,6 +192,31 @@ else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=advantagemxmod
 endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    rild.libpath=/system/lib/libril-qc-1.so \
+    rild.libargs=-d /dev/smd0 \
+    ro.ril.hsxpa=1 \
+    ro.ril.gprsclass=10 \
+    ro.ril.disable.power.collapse=0 \
+    ro.ril.def.agps.mode = 2 \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15 \
+    ro.com.google.locationfeatures=1 \
+    ro.setupwizard.enable_bypass=1 \
+    ro.media.dec.jpeg.memcap=20000000 \
+    dalvik.vm.lockprof.threshold=500 \
+    dalvik.vm.dexopt-flags=m=y \
+    dalvik.vm.heapsize=32m \
+    dalvik.vm.execution-mode=int:jit \
+    dalvik.vm.dexopt-data-only=1 \
+    ro.opengles.version=131072  \
+    ro.compcache.default=0
+
+
+# We want Russian on top of small_languages
+PRODUCT_LOCALES += ru_RU
+PRODUCT_DEFAULT_LANGUAGE := en_GB
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_BRAND := AdvantageMX

@@ -4,10 +4,14 @@
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
+
 TARGET_BOARD_PLATFORM := msm7k
-TARGET_CPU_ABI := armeabi
+TARGET_CPU_ABI := armeabi-v6l
+TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_BOOTLOADER_BOARD_NAME := liquid_mini
+
+TARGET_OTA_ASSERT_DEVICE := liquid_mini
 
 # EGL
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -46,8 +50,8 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
 # Releasetools
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/acer/liquid_mini/releasetools/liquid_mini_ota_from_target_files
-TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/acer/liquid_mini/releasetools/liquid_mini_img_from_target_files
+#TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/acer/liquid_mini/releasetools/liquid_mini_ota_from_target_files
+#TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/acer/liquid_mini/releasetools/liquid_mini_img_from_target_files
 
 #QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -76,6 +80,7 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Camera
 USE_CAMERA_STUB := false
+BOARD_USE_FROYO_LIBCAMERA := true
 #BOARD_CAMERA_USE_GETBUFFERINFO := true
 #BOARD_USE_CAF_LIBCAMERA := true
 
