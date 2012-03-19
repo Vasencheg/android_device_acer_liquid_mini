@@ -1,3 +1,5 @@
+USE_CAMERA_STUB := false
+
 # inherit from the proprietary version
 -include vendor/acer/liquid_mini/BoardConfigVendor.mk
 
@@ -39,10 +41,11 @@ BOARD_RECOVERY_ALWAYS_WIPES := false
 #BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Audio
+BOARD_USES_GENERIC_AUDIO := false
 TARGET_PROVIDES_LIBAUDIO := true
 
 # RIL
-TARGET_PROVIDES_LIBRIL := true
+#TARGET_PROVIDES_LIBRIL := true
 
 # FM
 BOARD_FM_DEVICE := bcm4325
@@ -54,33 +57,35 @@ BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 #TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/acer/liquid_mini/releasetools/liquid_mini_img_from_target_files
 
 #QCOM
-BOARD_USES_QCOM_HARDWARE := true
-BOARD_USES_QCOM_LIBS := true
-BOARD_USES_QCOM_LIBRPC := true
+BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
+BOARD_USES_QCOM_HARDWARE       := true
+BOARD_USES_QCOM_LIBS	       := true
+BOARD_USES_QCOM_LIBRPC         := true
+BOARD_USE_QCOM_PMEM            := true
 
 # WIFI defines
-#BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-#WPA_SUPPLICANT_VERSION := VER_0_6_X
-#WIFI_DRIVER_FW_STA_PATH := "/vendor/firmware/fw_bcm4329.bin"
-#WIFI_DRIVER_FW_AP_PATH := "/vendor/firmware/fw_bcm4329_apsta.bin"
-#BOARD_WLAN_DEVICE := bcm4329
-#WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
-#WIFI_DRIVER_MODULE_ARG := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/system/etc/wifi/nvram_net.txt dhd_watchdog_ms=10 dhd_poll=1"
-#WIFI_DRIVER_MODULE_NAME := "bcm4329"
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
+BOARD_WLAN_DEVICE           := bcm4329
+WIFI_DRIVER_MODULE_PATH     := "/system/etc/bcm4329.bin"
+WIFI_DRIVER_MODULE_NAME     := "bcm4329"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/rtecdc.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/rtecdc-ap.bin"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/etc/rtecdc.bin nvram_path=/etc/nvram_net.txt dhd_watchdog_ms=10 dhd_poll=1"
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_BLUETOOTH_CUSTOM_HCIATTACH := true
+#BOARD_HAVE_BLUETOOTH_BCM := true
 
 # GPS HAL
-#BOARD_USES_QCOM_GPS := true
-#BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := liquid_mini
+BOARD_USES_QCOM_GPS := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := liquid_mini
 # AMSS version to use for GPS
-#BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 # Camera
-USE_CAMERA_STUB := false
-BOARD_USE_FROYO_LIBCAMERA := true
+#BOARD_USE_FROYO_LIBCAMERA := true
 #BOARD_CAMERA_USE_GETBUFFERINFO := true
 #BOARD_USE_CAF_LIBCAMERA := true
 

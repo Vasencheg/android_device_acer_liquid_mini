@@ -1,6 +1,13 @@
 #
 # system.prop for liquid_mini
 #
+#ro.sf.lcd_density=240
+
+#debug.fb.rgb565 = 0
+
+# Modify MMS APN retry timer from 5s to 2s.
+ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
+
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 persist.rild.nitz_plmn=
@@ -12,9 +19,24 @@ persist.rild.nitz_short_ons_0=
 persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
-ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
+persist.radio.skippable.mcclist=228,404,405,460,466,505,520
+persist.cust.tel.eons=1
+persist.rild.autopinenabled=1
 debug.sf.hw=1
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.ril.disable.power.collapse=0
+
+wifi.interface=eth0
+wifi.supplicant_scan_interval=15
+
+mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2
+ro.use_data_netmgrd=true
+
+# The OpenGL ES API level that is natively supported by this device.
+# This is a 16.16 fixed point number
+ro.opengles.version = 131072
+
 debug.composition.type=mdp
 dalvik.vm.heapsize=32m
 #
@@ -24,15 +46,8 @@ media.stagefright.enable-player=true
 media.stagefright.enable-meta=false
 media.stagefright.enable-scan=false
 media.stagefright.enable-http=true
-#
-# system prop for opengles version
-#
-ro.opengles.version=131072
-#
-# system props for the data modules
-#
-ro.use_data_netmgrd=false
-#
-# system prop for Bluetooth Auto connect for remote initated connections
-#
-ro.bluetooth.remote.autoconnect=true
+
+# For the default value of agps
+ro.ril.def.agps.mode = 2
+
+ro.setupwizard.mode=DISABLED
