@@ -28,7 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
     ro.com.google.networklocation=1 \
-    ro.com.google.gmsversion=2.2_r5 \
+    ro.com.google.gmsversion=2.3_r6 \
     ro.setupwizard.enable_bypass=1 \
     ro.telephony.ril_class=lgeqcom \
     dalvik.vm.lockprof.threshold=500 \
@@ -90,19 +90,20 @@ PRODUCT_COPY_FILES += \
     device/acer/liquid_mini/recovery/root/etc/setupenv.sh:recovery/root/etc/setupenv.sh
 
 # Device-specific init
-#PRODUCT_COPY_FILES += \
-#    device/acer/liquid_mini/root/init.liquid_mini.rc:root/init.liquid_mini.rc \
-#    device/acer/liquid_mini/root/ueventd.liquid_mini.rc:root/ueventd.liquid_mini.rc \
+PRODUCT_COPY_FILES += \
+    device/acer/liquid_mini/root/init.liquid_mini.rc:root/init.liquid_mini.rc \
+    device/acer/liquid_mini/root/ueventd.liquid_mini.rc:root/ueventd.liquid_mini.rc
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/acer/liquid_mini/root/init.qcom.rc:root/init.qcom.rc \
     device/acer/liquid_mini/root/init.qcom.sh:root/init.qcom.sh \
     device/acer/liquid_mini/root/initlogo.rle:root/initlogo.rle\
     device/acer/liquid_mini/system/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-    device/acer/liquid_mini/system/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    device/acer/liquid_mini/root/init.rc:root/init.rc \
-    device/acer/liquid_mini/root/ueventd.rc:root/ueventd.rc
+    device/acer/liquid_mini/system/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh
+
+#    device/acer/liquid_mini/root/init.qcom.rc:root/init.qcom.rc \
+#    device/acer/liquid_mini/root/init.rc:root/init.rc \
+#    device/acer/liquid_mini/root/ueventd.rc:root/ueventd.rc
 
 # bin
 PRODUCT_COPY_FILES += \
@@ -160,7 +161,8 @@ PRODUCT_COPY_FILES += \
 
 # audio
 PRODUCT_COPY_FILES += \
-    device/acer/liquid_mini/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv
+    device/acer/liquid_mini/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/acer/liquid_mini/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
 
 # wifi
 PRODUCT_COPY_FILES += \

@@ -21,7 +21,7 @@ BOARD_EGL_CFG := device/acer/liquid_mini/system/lib/egl/egl.cfg
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM2,115200n8 androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE := console=ttyMSM2,115200n8 androidboot.hardware=liquid_mini
 BOARD_KERNEL_BASE := 0x2e00000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_PREBUILT_KERNEL := device/acer/liquid_mini/kernel
@@ -67,7 +67,7 @@ BOARD_USE_QCOM_PMEM            := true
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := bcm4329
-WIFI_DRIVER_MODULE_PATH     := "/system/etc/bcm4329.bin"
+WIFI_DRIVER_MODULE_PATH     := "/system/etc/bcm4329.ko"
 WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 WIFI_DRIVER_FW_STA_PATH     := "/system/etc/rtecdc.bin"
 WIFI_DRIVER_FW_AP_PATH      := "/system/etc/rtecdc-ap.bin"

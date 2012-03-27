@@ -27,11 +27,11 @@ ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.ril.disable.power.collapse=0
 
-wifi.interface=eth0
+wifi.interface=wlan0
 wifi.supplicant_scan_interval=15
 
 mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2
-ro.use_data_netmgrd=true
+ro.use_data_netmgrd=false
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
