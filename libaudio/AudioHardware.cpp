@@ -17,7 +17,7 @@
 
 #include <math.h>
 
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 #define LOG_TAG "AudioHardwareMSM72XX"
 #include <utils/Log.h>
 #include <utils/String8.h>
@@ -92,7 +92,8 @@ static uint32_t SND_DEVICE_SPEAKER_IN_CALL=-1;
 static uint32_t SND_DEVICE_BT=-1;
 static uint32_t SND_DEVICE_BT_EC_OFF=-1;
 static uint32_t SND_DEVICE_HEADSET=-1;
-static uint32_t SND_DEVICE_HEADSET_STEREO=-1;
+//static uint32_t SND_DEVICE_HEADSET_STEREO=-1;
+static uint32_t SND_DEVICE_HEADSET_STEREO=27;
 static uint32_t SND_DEVICE_HEADSET_AND_SPEAKER=-1;
 static uint32_t SND_DEVICE_IN_S_SADC_OUT_HANDSET=-1;
 static uint32_t SND_DEVICE_IN_S_SADC_OUT_SPEAKER_PHONE=-1;
@@ -110,6 +111,7 @@ AudioHardware::AudioHardware() :
     mOutput(0), mSndEndpoints(NULL), mCurSndDevice(-1), mDualMicEnabled(false), mBuiltinMicSelected(false),
     mFmRadioEnabled(false),mFmPrev(false),mFmVolume(0),fmfd(-1)
 {
+   LOGI("============== AMX ===============");
    if (get_audpp_filter() == 0) {
            audpp_filter_inited = true;
    }
@@ -120,13 +122,17 @@ AudioHardware::AudioHardware() :
         if (rc >= 0) {
             mSndEndpoints = new msm_snd_endpoint[mNumSndEndpoints];
             mInit = true;
-            LOGV("constructed (%d SND endpoints)", rc);
+            LOGV("constructed (%d SND endpoints)", mNumSndEndpoints);
             struct msm_snd_endpoint *ept = mSndEndpoints;
             for (int cnt = 0; cnt < mNumSndEndpoints; cnt++, ept++) {
                 ept->id = cnt;
                 ioctl(m7xsnddriverfd, SND_GET_ENDPOINT, ept);
                 LOGV("cnt = %d ept->name = %s ept->id = %d\n", cnt, ept->name, ept->id);
-#define CHECK_FOR(desc) if (!strcmp(ept->name, #desc)) SND_DEVICE_##desc = ept->id;
+#define CHECK_FOR(desc) if (!strcmp(ept->name, #desc)) { \
+                    SND_DEVICE_##desc = ept->id; \
+                    LOGV("         SND_DEVICE_%s = %d", ept->name, ept->id);\
+                }
+
                 CHECK_FOR(CURRENT);
                 CHECK_FOR(HANDSET);
                 CHECK_FOR(SPEAKER);

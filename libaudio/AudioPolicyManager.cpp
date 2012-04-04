@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "AudioPolicyManager"
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 #define DEVICE_OUT_SPEAKER_IN_CALL 0x4000
 #include <utils/Log.h>
 #include "AudioPolicyManager.h"

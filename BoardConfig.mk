@@ -48,9 +48,9 @@ TARGET_PROVIDES_LIBAUDIO := true
 #TARGET_PROVIDES_LIBRIL := true
 
 # FM
-BOARD_FM_DEVICE := bcm4325
 BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+BOARD_FM_DEVICE     := bcm4329
+
 
 # Releasetools
 #TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/acer/liquid_mini/releasetools/liquid_mini_ota_from_target_files
@@ -76,7 +76,7 @@ WIFI_DRIVER_MODULE_ARG      := "firmware_path=/etc/rtecdc.bin nvram_path=/etc/nv
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_CUSTOM_HCIATTACH := true
-#BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 
 # GPS HAL
 BOARD_USES_QCOM_GPS := true

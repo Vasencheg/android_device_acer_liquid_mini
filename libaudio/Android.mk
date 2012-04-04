@@ -1,3 +1,5 @@
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),liquid_mini)
+
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -48,3 +50,5 @@ ifeq ($(BOARD_HAVE_BLUETOOTH),true)
 endif
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif # TARGET_BOOTLOADER_BOARD_NAME

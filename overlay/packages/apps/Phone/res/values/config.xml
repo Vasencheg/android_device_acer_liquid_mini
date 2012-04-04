@@ -120,7 +120,7 @@
     <bool name="send_mic_mute_to_AudioManager">true</bool>
 
     <!-- Determines if device implements a noise suppression device for in call audio-->
-    <bool name="has_in_call_noise_suppression">false</bool>
+    <bool name="has_in_call_noise_suppression">true</bool>
 
     <!-- Voice quality filter parameter
          Set this if your device's libaudio has a parameter to adjust voice quality
